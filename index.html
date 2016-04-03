@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title></title>
+      <meta name="keywords" content="CODING CLUB" />
+      <meta name="description" content=webpage />
+      <meta name="author" content="Sumegh Garg" />
+      <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/font-awesome.css">
+      <script type="text/javascript">
+         function checkForm(form)
+         {
+           if(form.username.value == "") {
+             alert("Error: Username cannot be blank!");
+             form.username.focus();
+             return false;
+           }
+           re = /^\w+$/;
+           if(!re.test(form.username.value)) {
+             alert("Error: Username must contain only letters, numbers and underscores!");
+             form.username.focus();
+             return false;
+           }
+         
+           if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+             if(form.pwd1.value.length < 6) {
+               alert("Error: Password must contain at least six characters!");
+               form.pwd1.focus();
+               return false;
+             }
+             if(form.pwd1.value == form.username.value) {
+               alert("Error: Password must be different from Username!");
+               form.pwd1.focus();
+               return false;
+             }
+             re = /[0-9]/;
+             if(!re.test(form.pwd1.value)) {
+               alert("Error: password must contain at least one number (0-9)!");
+               form.pwd1.focus();
+               return false;
+             }
+             re = /[a-z]/;
+             if(!re.test(form.pwd1.value)) {
+               alert("Error: password must contain at least one lowercase letter (a-z)!");
+               form.pwd1.focus();
+               return false;
+             }
+             re = /[A-Z]/;
+             if(!re.test(form.pwd1.value)) {
+               alert("Error: password must contain at least one uppercase letter (A-Z)!");
+               form.pwd1.focus();
+               return false;
+             }
+           } else {
+             alert("Error: Please check that you've entered and confirmed your password!");
+             form.pwd1.focus();
+             return false;
+           }
+           alert("You entered a valid password: " + form.pwd1.value);
+           return true;
+         }
+      </script>
+      <style>
+         .form{
+         width:92.5vw;
+         margin-left:1vw;
+         height:auto;
+         border:0.1em solid black;
+         margin-top: 4vh;
+         margin-bottom: 4vh;
+         background-color: #F8F8F8;
+         overflow-x:hidden;
+         }
+         .form1{
+         float:left;
+         width:47vw;
+         padding-top: 2vh;
+         }
+         ul{
+         list-style-type: none;
+         }
+         li{
+         margin:4vh 0 7vh 1vw;
+         font-size: 3vh;
+         font-family: sans-serif;
+         }
+         input{
+         border: 0.09em solid black;
+         }
+         .form2{
+         padding-top: 6vh;
+         float:right;
+         position:relative;
+         width:48vw;
+         margin-top: -52vh;
+         }
+         body{
+         
+         margin-left:0;
+         overflow-x:hidden;
+         }
+         footer{
+         position:fixed;
+          bottom:0;
+          z-index: 10;
+          background-color:#333;
+          font-size:1em;
+         z-index: 5;
+          color:white;
+          width:100vw;
+          margin-left:-2vw;
+          text-align: center;
+}
+        .nav ul{
+  position: absolute;
+  width:105vw;
+  list-style-type: none;
+  font-size: 2em;
+  height: 10vh;
+  font-style:monospace;
+  background-color: transparent;
+  z-index: 1;
+  margin-left: -2vw;
+  margin-right: 10vw;
+  margin-top:-2vh;
+ 
+}
+.nav li{
+  display:inline block;
+  float:left;
+  margin-left:0.5vw;
+  padding-right:3.5vw;
+}
+
+.nav a{
+  color:white;
+  text-decoration: none;
+}
+
+      </style>
+   </head>
+   <body>
+      <div class="nav">
+      <ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Events</a></li>
+  <li style="float:right;margin-right:3.2vw;"><a href="#">Logout</a></li>
+  <li style="float:right;margin-right:.1vw;"><a href="#">Apply</a></li>
+  </ul>
+  </div>
+      <div class="container" style=" width: 105vw; margin-top:-10vh; margin-left: -1.7vw;" >
+      <br>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+         <!-- Indicators -->
+         <ol class="carousel-indicators" style="margin-left:-30.5vw;">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+         </ol>
+         <!-- Wrapper for slides -->
+         <div class="carousel-inner" role="listbox">
+            <div class="item active">
+               <img src="img/f5.jpg" alt="img1" style="height:80vh;width:100vw;">
+               <div class="carousel-caption">
+                  <h3>Coding club</h3>
+                  <p>Writing the code.</p>
+               </div>
+            </div>
+            <div class="item">
+               <img src="img/f8.jpg" alt="img2" style="height:80vh;width:100vw;">
+               <div class="carousel-caption">
+                  <h3>Coding club</h3>
+                  <p>Building the code.</p>
+               </div>
+            </div>
+            <div class="item">
+               <img src="img/f6.jpg" alt="img2" style="height:80vh;width:100vw;">
+               <div class="carousel-caption">
+                  <h3>Coding club</h3>
+                  <p>Debugging the code.</p>
+               </div>
+            </div>
+            <div class="item">
+               <img src="img/f2.jpg" alt="img3" style="height:80vh;width:100vw;">
+               <div class="carousel-caption">
+                  <h3>Coding club</h3>
+                  <p>Developing the code.</p>
+               </div>
+            </div>
+         </div>
+         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+         <span class="sr-only">Previous</span>
+         </a>
+         <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
+         </a>
+      </div>     
+         <div class="container" style=" margin-top: 1.5vh;margin-left:6.5vw;">
+            <div class="panel-group" id="accordion">
+               <div class="panel panel-default" style="background-color:#FFFFFF;border:0.1em solid black;font-family: comic;font-size: bold;width:96vw;margin-left:-6.3vw;">
+                  <div class="panel-heading">
+                     <div class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+
+                        	
+                            <h1 style="text-decoration: underline; font-size: 20px; margin-top: -0.2vh;">
+         
+            
+                               <i class="fa fa-info-circle"style="color:black;"></i>About Us
+             
+         
+                            </h1>
+      
+                        </a>
+                     </div>
+                  </div>
+                  <div id="collapse1" class="panel-collapse collapse in">
+                     <div class="panel-body" style="height:auto;font-size:1.3em">
+                     	<div class="container">
+                     	 <blockquote style="margin-left:-04.5vw; font-family: helvetica;">
+     						<p>“That's the thing about people who think they hate computers. What they really hate is lousy programmers.” 
+      						</p>
+      						<footer> Larry Niven</footer>
+      					 </blockquote>
+      					</div>
+      					<p style="font-family: monospace;margin-top:-1.5vh;margin-left:0.7vw;">Coding may refer to:
+      Channel coding, in coding theory
+      Line coding
+      Computer programming, the process of designing, writing, testing, debugging / troubleshooting, and maintaining the source code of computer programs
+      The process of Statistical classification of information
+      Coding (social sciences), refers to an analytical process in which data, in both quantitative form (such as questionnaires results) or qualitative (such as interview transcripts) are categorised to facilitate analysis
+      Coding (therapy), a controversial therapy used to treat addictions
+      Legal coding, the process of creating summary or keyword data from a document. It is widely used in the legal profession to create a fast-search index or database of documents for use in litigation
+      A coding strand of DNA is translated into a protein product
+      Code Blue (emergency code), which is a patient in Cardiac Arrest or Respiratory Arrest
+      					</p>
+
+                     </div>
+                  </div>
+               </div>
+               <div class="panel panel-default" style="background-color:#FFFFFF;border:0.1em solid black;font-family: comic;font-size: 1.3em;font-size: bold;width:96vw;margin-left:-6.3vw;
+                  ">
+                  <div class="panel-heading" style="height: auto;">
+                     <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"style="font-size: 1.5em;">
+
+                        	<h1 style="text-decoration: underline;font-size: 20px;">
+                				<i class="fa fa-calendar"style="color:black;"></i>Events       
+      						</h1>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse2" class="panel-collapse collapse">
+                     <div class="panel-body">
+                     	 <p style="margin-top:-1.5vh;font-family: monospace;">Following are the activities practised in the Coding Club:
+
+                      
+<div class="polaroid col-sm-12 col-md-6 col-lg-4">
+  <img src="img/cd.jpg" alt="Qrious" style="width:100%">
+  <div class="container">
+    <p></p>
+  </div>
+</div>
+<div class="polaroid col-sm-12 col-md-6 col-lg-4">
+  <img src="img/od.jpg" alt="Oddysey" style="width:100%">
+  <div class="container">
+    <p></p>
+  </div>
+</div>
+<div class="polaroid col-sm-12 col-md-6 col-lg-4">
+  <img src="img/az.jpg" alt="Age Of Zombies" style="width:100%">
+  <div class="container">
+    <p></p>
+  </div>
+</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="panel panel-default" style="background-color:#FFFFFF;border:0.1em solid black;font-family: comic;font-size: 1.3em;font-size: bold;width:96vw;margin-left:-6.3vw;
+                  ">
+                  <div class="panel-heading" style="height: auto;">
+                     <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"style="font-size: 1.5em;">
+
+                       <p style="text-decoration: underline; font-size: 20px;">
+         
+            
+                <i class="fa fa-sign-in" style="color:black;"></i> Apply
+             
+         
+      </p>
+
+                       </a>
+                     </h4>
+                  </div>
+                  <div id="collapse3" class="panel-collapse collapse">
+                     <div class="panel-body">
+                       <div class="container" style="margin-left: -1.3vw">
+         					<button type="button" class="btn btn-primary">Current Vacancies <span class="badge">5</span></button>  
+      				   </div>
+     				   <div class="container" style="margin-top:1vh;">
+         				 <div class="panel-group">
+            				<div class="panel panel-danger" style="margin-left: -5.5vw;width:93vw;">
+               					<div class="panel-heading" style="border:0.1em solid black;">CAUTION</div>
+               					<div class="panel-body" style="font-size: 1.3em;border:0.1em solid black;"><b>If you wish to enlighten yourself,you cant scroll without filling this.<br>
+                  				There are hundreds wanting to join,you can be among the chosen few.</b>
+               					</div>
+            					</div>
+         					</div>
+      					</div>
+                     </div>
+                     <form class="form" method="post" action="#"  onsubmit="return checkForm(this);">
+         <div class="form1">
+            <ul>
+               <li>
+                  <label for="name">Enter your name:</label>
+                  <input id="name" name="username" type="text"placeholder="enter your name" required>
+               </li>
+               <li>
+                  <label for="age">Your Age:</label>
+                  <input id="age" type="number"size="6"min="17"max="23"name="age"placeholder="age" required>
+               </li>
+               <li>
+                  <label for="email">Enter your email id:</label>
+                  <input id="email" name="email"type="email"placeholder="enter a valid email address"required>
+               </li>
+               <li>
+                  <label for="input4">Choose your field of interest:</label>
+                  <select id="input4" name="interest"style="border: 0.09em solid black;
+                     "placeholder="enter interest value">
+                     <option value="option1">front-end</option>
+                     <option value="option2">back-end</option>
+                     <option value="option3">game development</option>
+                     <option value="option4">app development</option>
+                  </select>
+               </li>
+            </ul>
+         </div>
+         <div class="form2">
+            <ul>
+               <li>
+                  <label for="why">Why do you want to join the club:</label>
+                  <br>
+                  <textarea id="why" name="why"rows="8"cols="50"style="border: 0.09em solid black;
+                     "placeholder="write in 100 to 200 words"required></textarea>
+               </li>
+               <li>
+                  <label for="password">Enter your password:</label>
+                  <input id="password" name="pwd1"type="password"placeholder="enter your password"required>
+               </li>
+               <li>
+                  <label for="password">Confirm password:</label>
+                  <input id="password" name="pwd2"type="password"placeholder="confirm your password"required>
+               </li>
+               <li><input type="checkbox" id="remember"> 
+                  <label for="remember">Remember me</label>
+               </li>
+            </ul>
+            <div class="container">
+               <input type="submit" class="btn btn-info" value="Submit" style="margin-left: 3vw;height:7vh;width:12vw;margin-bottom: 2vh;border: 0.1em solid black">
+            </div>
+         </div>
+      </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </p>
+      </div>
+      <div style="
+      	 width:100vw;
+         margin-top:-1vh;
+         padding-left:2vw;
+         padding-right:2vw;
+         background-color:#FFFFFF;
+         ">
+    <footer>
+      &copy bits pilani
+    </footer>
+   </body>
+</html>
